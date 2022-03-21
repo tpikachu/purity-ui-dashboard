@@ -17,20 +17,20 @@
 */
 import React from "react";
 import ReactDOM from "react-dom";
-import { HashRouter, Route, Switch, Redirect } from "react-router-dom";
+import { BrowserRouter, HashRouter, Route, Navigate, Routes } from "react-router-dom";
 
 import AuthLayout from "layouts/Auth.js";
 import AdminLayout from "layouts/Admin.js";
-import RTLLayout from "layouts/RTL.js";
+// import RTLLayout from "layouts/RTL.js";
 
 ReactDOM.render(
-  <HashRouter>
-    <Switch>
-      <Route path={`/auth`} component={AuthLayout} />
-      <Route path={`/admin`} component={AdminLayout} />
-      <Route path={`/rtl`} component={RTLLayout} />
-      <Redirect from={`/`} to="/admin/dashboard" />
-    </Switch>
-  </HashRouter>,
+  <BrowserRouter>
+    <Routes>
+      <Route path={`auth/*`} element={<AuthLayout />} />
+      <Route path={`admin/*`} element={<AdminLayout />} />
+      {/* <Route path={`/rtl`} element={RTLLayout} /> */}
+      <Route exact path={'/'} element={<Navigate to="/admin/dashboard" replace />}/>
+    </Routes>
+  </BrowserRouter>,
   document.getElementById("root")
 );

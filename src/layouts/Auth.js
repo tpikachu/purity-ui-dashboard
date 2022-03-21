@@ -4,7 +4,7 @@ import Footer from "components/Footer/Footer.js";
 // core components
 import AuthNavbar from "components/Navbars/AuthNavbar.js";
 import React from "react";
-import { Redirect, Route, Switch } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import routes from "routes.js";
 import theme from "theme/theme.js";
 
@@ -71,8 +71,8 @@ export default function Pages(props) {
       if (prop.layout === "/auth") {
         return (
           <Route
-            path={prop.layout + prop.path}
-            component={prop.component}
+            path={prop.path}
+            element={prop.element}
             key={key}
           />
         );
@@ -94,10 +94,10 @@ export default function Pages(props) {
         </Portal>
         <Box w="100%">
           <Box ref={wrapper} w="100%">
-            <Switch>
+            <Routes>
               {getRoutes(routes)}
-              <Redirect from="/auth" to="/auth/login-page" />
-            </Switch>
+              <Route path='/auth' element={<Navigate replace to="/auth/login-page"/>} />
+            </Routes>
           </Box>
         </Box>
         <Box px="24px" mx="auto" width="1044px" maxW="100%">
