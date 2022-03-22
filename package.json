@@ -34,6 +34,7 @@
     "react-swipeable-views": "0.13.9",
     "react-table": "7.7.0",
     "react-tagsinput": "3.19.0",
+    "react-twitter-widgets": "^1.10.0",
     "stylis": "^4.0.13",
     "stylis-plugin-rtl": "^2.1.1"
   },

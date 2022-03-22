@@ -20,7 +20,7 @@ const BuiltByDevelopers = ({ title, name, description, image }) => {
   return (
     <Card minHeight='290.5px' p='1.2rem'>
       <CardBody w='100%'>
-        <Flex flexDirection={{ sm: "column", lg: "row" }} w='100%'>
+        <Flex flexDirection={{ sm: "column", lg: "row" }} alignItems={{sm: "center", lg: "center"}} w='100%'>
           <Flex
             flexDirection='column'
             h='100%'
