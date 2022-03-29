@@ -203,7 +203,7 @@ purity-ui-dashboard/
     │   └── RTL
     │       └── RTLPage.js
     ├── index.js
-    └── routes.js
+    └── routes
 
 ```
 
