@@ -91,7 +91,6 @@ export default function AuthNavbar(props) {
         <Button
           fontSize="sm"
           ms="0px"
-          me="0px"
           px="0px"
           me={{ sm: "2px", md: "16px" }}
           color={navbarIcon}
@@ -105,7 +104,6 @@ export default function AuthNavbar(props) {
         <Button
           fontSize="sm"
           ms="0px"
-          me="0px"
           px="0px"
           me={{ sm: "2px", md: "16px" }}
           color={navbarIcon}
@@ -184,22 +182,6 @@ export default function AuthNavbar(props) {
           />
         </Box>
         {linksAuth}
-        <Link href="https://creative-tim.com/product/purity-ui-dashboard">
-          <Button
-            bg={bgButton}
-            color={colorButton}
-            fontSize="xs"
-            variant="no-hover"
-            borderRadius="35px"
-            px="30px"
-            display={{
-              sm: "none",
-              lg: "flex",
-            }}
-          >
-            Free Download
-          </Button>
-        </Link>
       </Flex>
     </Flex>
   );

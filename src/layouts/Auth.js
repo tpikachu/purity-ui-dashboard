@@ -61,6 +61,7 @@ export default function Pages(props) {
     return activeNavbar;
   };
   const getRoutes = (routes) => {
+    console.log('hey what is routes? ', routes)
     return routes.map((prop, key) => {
       if (prop.collapse) {
         return getRoutes(prop.views);
@@ -89,14 +90,14 @@ export default function Pages(props) {
         <Portal containerRef={navRef}>
           <AuthNavbar
             secondary={getActiveNavbar(routes)}
-            logoText="PURITY UI DASHBOARD"
+            logoText="Dashboard"
           />
         </Portal>
         <Box w="100%">
           <Box ref={wrapper} w="100%">
             <Routes>
               {getRoutes(routes)}
-              <Route path='/auth' element={<Navigate replace to="/auth/login-page"/>} />
+              <Route exact path='/auth' element={<Navigate to="/auth/signin"/>} />
             </Routes>
           </Box>
         </Box>

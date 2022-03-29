@@ -110,7 +110,7 @@ const Dashboard = (props) => {
         <Portal>
           <AdminNavbar
             onOpen={onOpen}
-            logoText={"PURITY UI DASHBOARD"}
+            logoText={"Dashboard"}
             brandText={getActiveRoute(routes)}
             secondary={getActiveNavbar(routes)}
             fixed={fixed}

@@ -16,6 +16,7 @@ import {
   InputGroup,
   InputLeftAddon
 } from "@chakra-ui/react";
+import Card from "components/Card/Card.js";
 import { Timeline } from "react-twitter-widgets";
 
 
@@ -44,12 +45,21 @@ function TwitterFeeder() {
   }
 
   return (
-    <Box bg='gray.700' p={2} borderRadius="lg">
+    <Card p={2} borderRadius="lg">
       <Flex p={2} flexDirection="row" alignItems="center" justifyContent="space-around">
-        <Button bg='transparent' onClick={onOpen} my={{ sm: "1.5rem", lg: "0px" }}>Open Modal</Button>
+        <Button bg='transparent' onClick={onOpen} my={{ sm: "1.5rem", lg: "0px" }}>Connect</Button>
         <Button bg='transparent' onClick={onDisconnect} my={{ sm: "1.5rem", lg: "0px" }}>Disconnect</Button>
       </Flex>
-      <Modal
+      {!!`twitterId`.length && (<Timeline
+        dataSource={{
+          sourceType: "profile",
+          screenName: twitterId
+        }}
+        options={{
+          height: "480"
+        }}
+      />)}
+            <Modal
         size="sm"
         blockScrollOnMount={false}
         isOpen={isOpen}
@@ -75,16 +85,7 @@ function TwitterFeeder() {
           </ModalFooter>
         </ModalContent>
       </Modal>
-      {!!`twitterId`.length && (<Timeline
-        dataSource={{
-          sourceType: "profile",
-          screenName: twitterId
-        }}
-        options={{
-          height: "480"
-        }}
-      />)}
-    </Box>
+    </Card>
   );
 }
 
